@@ -1,0 +1,15 @@
+baseURL = "https://lunarie.sammyette.party/"
+title = "Lunarie"
+theme = "sakura"
+languageCode = "en-US"
+enableInlineShortcodes = true
+
+[params]
+  lightSakura = "sakura"
+  darkSakura = "sakura-vader"
+
+[permalinks]
+  blogs = "/:title/"
+
+[markup.goldmark.renderer]
+  unsafe = true
