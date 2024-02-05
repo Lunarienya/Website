@@ -8,8 +8,5 @@ enableInlineShortcodes = true
   lightSakura = "sakura"
   darkSakura = "sakura-vader"
 
-[permalinks]
-  blogs = "/:title/"
-
 [markup.goldmark.renderer]
   unsafe = true
