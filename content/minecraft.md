@@ -11,7 +11,7 @@ service users. These are the steps on how you can connect.
 The Lunarie Mineraft server is a "cracked" server to allow anyone
 with an account to join. Here is the way you can get Mineraft to join.
 
-If you have a legitimate account, still use [Prism Launcher](#PrismLauncher)
+If you have a legitimate account, still use [Prism Launcher](#prismlauncher)
 as it's recommended, easy to use with multiple versions and makes working
 with this guide easy to get the convenient mods offered in our mod pack.
 
