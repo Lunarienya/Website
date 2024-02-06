@@ -25,7 +25,8 @@ Only use it if you know how to get the required mods to join.
 
 ## PrismLauncher
 Prism is the recommend laucnher and personal pick of administrators of Lunarie.
-Download and install it from [this link.](https://prismlauncher.org/download/)
+If you have a legitimate Minecraft account, download the official Prism: https://prismlauncher.org/download/
+Otherwise, download this version to add an offline account: [click here](https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/7.1/PrismLauncher-Windows-MSVC-Setup-7.1.exe)
 
 ### Account Setup
 Add your account:
