@@ -25,9 +25,10 @@ pub fn page() {
 						button([button.md(), button.solid(button.Primary)], [element.text("Setup")])
 					]),
 					html.a([attribute.href(config.modpack_link())], [
-						button([button.md(), button.solid(button.Neutral)], [element.text("Download Modpack")])
+						button([button.md(), button.solid(button.Neutral)], [element.text("Download Instance")])
 					])
-				])
+				]),
+				html.p([], [element.text("If you already have Prism Launcher setup, all you have to do is import the instance for Season 2.")])
 			]),
 			html.img([
 				attribute.src("/priv/static/wave.svg"),
