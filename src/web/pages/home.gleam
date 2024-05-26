@@ -23,6 +23,9 @@ pub fn page() {
 				html.div([attribute.class("flex gap-2")], [
 					html.a([attribute.href("/setup")], [
 						button([button.md(), button.solid(button.Primary)], [element.text("Setup")])
+					]),
+					html.a([attribute.href(config.modpack_link())], [
+						button([button.md(), button.solid(button.Neutral)], [element.text("Download Modpack")])
 					])
 				])
 			]),

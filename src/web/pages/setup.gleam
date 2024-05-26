@@ -42,7 +42,7 @@ pub fn page() {
 		html.section([attribute.class("")], [
 			html.h1([attribute.class("my-4 font-['Poppins'] font-bold text-3xl")], [element.text("Step 2: Getting Mods")]),
 			html.a([
-				attribute.href("https://github.com/Lunarienya/ContentModpack/raw/master/Lunarie.zip"),
+				attribute.href(config.modpack_link()),
 			], [
 				button([button.sm(), button.solid(button.Primary)], [element.text("Download Instance")])
 			]),
