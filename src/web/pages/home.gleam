@@ -16,10 +16,10 @@ pub fn page() {
 					]),
 					html.div([], [
 						html.h1([attribute.class("font-bold text-6xl")], [element.text("Lunarie")]),
-						html.div([attribute.class("self-center font-bold text-xs rounded py-0.5 px-1 bg-violet-600")], [element.text("Season 2")])
+						html.div([attribute.class("self-center font-bold text-xs rounded py-0.5 px-1 bg-green-600")], [element.text("Season 3")])
 					])
 				]),
-				html.h1([attribute.class("font-bold text-3xl")], [element.text("Welcome to a new era.")]),
+				html.h1([attribute.class("font-bold text-3xl")], [element.text("Now landing on: Cubic Earth.")]),
 				html.div([attribute.class("flex gap-2")], [
 					html.a([attribute.href("/setup")], [
 						button([button.md(), button.solid(button.Primary)], [element.text("Setup")])
@@ -28,7 +28,7 @@ pub fn page() {
 						button([button.md(), button.solid(button.Neutral)], [element.text("Download Instance")])
 					])
 				]),
-				html.p([], [element.text("If you already have Prism Launcher setup, all you have to do is import the instance for Season 2.")])
+				html.p([], [element.text("If you already have Prism Launcher setup, all you have to do is import the instance for Season 3.")])
 			]),
 			html.img([
 				attribute.src("/priv/static/wave.svg"),

@@ -3,5 +3,5 @@ pub fn logo() -> String {
 }
 
 pub fn modpack_link() -> String {
-	"https://github.com/Lunarienya/Season-2/raw/main/Lunarie%20-%20Season%202.zip"
+	"https://github.com/Lunarienya/Season-3/raw/main/Lunarie%20-%20Season%203.zip"
 }
