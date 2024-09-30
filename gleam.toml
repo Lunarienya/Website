@@ -1,4 +1,4 @@
-name = "lunarie_s3_website"
+name = "website"
 version = "2.0.0"
 target = "javascript"
 
