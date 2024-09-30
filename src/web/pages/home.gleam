@@ -98,7 +98,10 @@ pub fn page() {
 								java version, and mod pack.
 								
 								Once all of those have been setup, you can simply launch the game and the server
-								will already be in the server list."),
+								will already be in the server list.
+								
+								To manage the account you will be using to play on Lunarie, you can visit Elysium
+								with the button named at the top of the page."),
 							])
 						])
 					])
