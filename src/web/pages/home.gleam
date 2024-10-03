@@ -46,6 +46,24 @@ pub fn page() {
 				html.section([], [
 					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
 						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
+							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("How Do I Play?")]),
+							html.p([attribute.class("mb-4 text-light")], [
+								element.text("Download the support package with the appropriately labelled 
+								button at the top of this website. It includes the recommended launcher,
+								java version, and mod pack.
+								
+								Once all of those have been setup, you can simply launch the game and the server
+								will already be in the server list.
+								
+								To manage the account you will be using to play on Lunarie, you can visit Elysium
+								with the button named at the top of the page."),
+							])
+						])
+					])
+				]),
+				html.section([], [
+					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
+						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
 							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("History")]),
 							html.p([attribute.class("mb-4 text-light")], [
 								element.text("
@@ -88,24 +106,6 @@ pub fn page() {
 						])
 					])
 				]),
-				html.section([], [
-					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
-						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("How Do I Play?")]),
-							html.p([attribute.class("mb-4 text-light")], [
-								element.text("Download the support package with the appropriately labelled 
-								button at the top of this website. It includes the recommended launcher,
-								java version, and mod pack.
-								
-								Once all of those have been setup, you can simply launch the game and the server
-								will already be in the server list.
-								
-								To manage the account you will be using to play on Lunarie, you can visit Elysium
-								with the button named at the top of the page."),
-							])
-						])
-					])
-				])
 			]),
 			html.img([
 				attribute.src("/priv/static/wave.svg"),
