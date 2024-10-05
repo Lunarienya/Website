@@ -3,5 +3,5 @@ pub fn logo() -> String {
 }
 
 pub fn modpack_link() -> String {
-	"https://github.com/Lunarienya/X-Zenless/releases/download/pkg1.0/Lunarie.Support.Package.1.0.zip"
+	"https://github.com/Lunarienya/X-Zenless/releases/download/pkg1.1/Lunarie.Support.Package.1.1.zip"
 }
