@@ -57,6 +57,9 @@ pub fn page() {
 								
 								To manage the account you will be using to play on Lunarie, you can visit Elysium
 								with the button named at the top of the page."),
+							]),
+							html.video([attribute.attribute("controls", ""), attribute.class("max-h-96")], [
+								html.source([attribute.src("https://safe.saya.moe/DmgozGncoecQ.mp4")])
 							])
 						])
 					])
