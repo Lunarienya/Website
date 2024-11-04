@@ -13,6 +13,12 @@ pub type Colors {
   Danger
 }
 
+pub type OS {
+  Windows
+  MacOS
+  Linux
+}
+
 pub fn button(
   attributes: List(Attribute(a)),
   children: List(Element(a)),
@@ -32,10 +38,19 @@ pub fn button(
   )
 }
 
+pub fn solid_os(color: OS) -> Attribute(a) {
+  case color {
+    Windows -> "bg-sky-500 text-white hover:enabled:bg-neutral/90"
+    MacOS -> "bg-zinc-700 text-white hover:enabled:bg-neutral/90"
+    Linux -> "bg-zinc-700 text-white hover:enabled:bg-neutral/90"
+  }
+  |> class
+}
+
 pub fn solid(color: Colors) -> Attribute(a) {
   case color {
     Neutral -> "bg-zinc-700 text-white hover:enabled:bg-neutral/90"
-    Primary -> "bg-rose-600 text-white hover:enabled:bg-primary/90"
+    Primary -> "bg-purple-600 text-white hover:enabled:bg-primary/90"
     Secondary ->
       "bg-secondary text-secondary-foreground hover:enabled:bg-secondary/90"
     Success -> "bg-success text-success-foreground hover:enabled:bg-success/90"

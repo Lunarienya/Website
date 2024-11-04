@@ -17,13 +17,13 @@ pub fn page() {
 						]),
 						html.div([], [
 							html.h1([attribute.class("font-bold text-6xl")], [element.text("Lunarie")]),
-							html.div([attribute.class("self-center font-bold text-xs rounded py-0.5 px-1 bg-rose-500")], [element.text("X: Zenless")])
+							html.div([attribute.class("self-center font-bold text-xs rounded py-0.5 px-1 bg-purple-500")], [element.text("Tempest")])
 						]),
 					]),
 					html.h1([attribute.class("font-bold text-3xl")], [element.text("Redemption.")]),
 					html.div([attribute.class("flex gap-2")], [
-						html.a([attribute.href(config.modpack_link())], [
-							button([button.md(), button.solid(button.Primary)], [element.text("Download Support Package")])
+						html.a([attribute.href("/downloads")], [
+							button([button.md(), button.solid(button.Primary)], [element.text("Downloads")])
 						]),
 						html.a([attribute.href("https://elysium.lunarie.party")], [
 							button([button.md(), button.solid(button.Neutral)], [element.text("Elysium")])
@@ -46,24 +46,39 @@ pub fn page() {
 				html.section([], [
 					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
 						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("How Do I Play?")]),
+							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("History")]),
 							html.p([attribute.class("mb-4 text-light")], [
-								element.text("Download the support package with the appropriately labelled 
-								button at the top of this website. It includes the recommended launcher,
-								java version, and mod pack.
-								
-								Once all of those have been setup, you can simply launch the game and the server
-								will already be in the server list.
-								
-								To manage the account you will be using to play on Lunarie, you can visit Elysium
-								with the button named at the top of the page."),
-							]),
-							html.video([attribute.attribute("controls", ""), attribute.class("max-h-96")], [
-								html.source([attribute.src("https://safe.saya.moe/DmgozGncoecQ.mp4")])
+								element.text("
+								1. Contact the Lunarie admin to register on Elysium."),
+								html.br([]),
+								element.text("2. Download the Elysium Launcher and login with your account."),
+								html.br([]),
+								element.text("3. Download the modpack via the steps shown on the downloads page.")
 							])
 						])
 					])
 				]),
+				//html.section([], [
+				//	html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
+				//		html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
+				//			html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("How Do I Play?")]),
+				//			html.p([attribute.class("mb-4 text-light")], [
+				//				element.text("Download the support package with the appropriately labelled 
+				//				button at the top of this website. It includes the recommended launcher,
+				//				java version, and mod pack.
+				//				
+				//				Once all of those have been setup, you can simply launch the game and the server
+				//				will already be in the server list.
+				//				
+				//				To manage the account you will be using to play on Lunarie, you can visit Elysium
+				//				with the button named at the top of the page."),
+				//			]),
+				//			html.video([attribute.attribute("controls", ""), attribute.class("max-h-96")], [
+				//				html.source([attribute.src("https://safe.saya.moe/DmgozGncoecQ.mp4")])
+				//			])
+				//		])
+				//	])
+				//]),
 				html.section([], [
 					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
 						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [

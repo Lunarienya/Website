@@ -12,6 +12,7 @@ import config
 
 import web/pages/home
 import web/pages/not_found
+import web/pages/downloads
 
 pub fn main() {
 	let app = lustre.application(init, update, view)
@@ -20,6 +21,7 @@ pub fn main() {
 
 pub type Route {
 	Home
+	Downloads
 	NotFound
 }
 
@@ -31,8 +33,10 @@ fn init(_) -> #(Route, Effect(Msg)) {
 }
 
 fn location_to_route(uri: Uri) -> Route {
-	case uri.path_segments(uri.path) {
-		[] -> Home
+	io.debug(uri.path)
+	case uri.path {
+		"/" -> Home
+		"/downloads" -> Downloads
 		_ -> NotFound
 	}
 }
@@ -54,6 +58,7 @@ fn update(_, msg: Msg) -> #(Route, Effect(Msg)) {
 fn view(route: Route) -> Element(Msg) {
 	let page = case route {
 		Home -> home.page()
+		Downloads -> downloads.page()
 		NotFound -> not_found.page()
 	}
 
