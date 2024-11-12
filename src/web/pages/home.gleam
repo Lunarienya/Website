@@ -5,131 +5,163 @@ import lustre/element/html
 import web/components/button.{button}
 import config
 
+const version = "v1.0"
+
+type InstallType {
+	WindowsInstaller
+	WindowsPortable
+	MacOSIntelInstaller
+	MacOSArmInstaller
+	LinuxAppimageInstaller
+	LinuxPortableInstaller
+	LinuxPortableQt5Installer
+}
+
+const windows_portable_link = ""
+
+const macos_x86_installer = ""
+const macos_arm_installer = ""
+
+const linux_appimage = ""
+const linux_portable = ""
+const linux_portable_qt5 = ""
+
 pub fn page() {
-	html.div([attribute.class("h-full")], [
-		html.main([attribute.class("font-['Poppins'] flex flex-col h-full")], [
-			html.div([attribute.class("flex flex-col flex-grow justify-center gap-4")], [
-				html.div([attribute.class("flex flex-col items-center gap-2")], [
-					html.div([attribute.class("flex flex-row flex-grow items-center gap-3")], [
-						html.img([
-							attribute.src(config.logo()),
-							attribute.class("h-28")
-						]),
-						html.div([], [
-							html.h1([attribute.class("font-bold text-6xl")], [element.text("Lunarie")]),
-							html.div([attribute.class("self-center font-bold text-xs rounded py-0.5 px-1 bg-purple-500")], [element.text("Tempest")])
-						]),
-					]),
-					html.h1([attribute.class("font-bold text-3xl")], [element.text("Redemption.")]),
-					html.div([attribute.class("flex gap-2")], [
-						html.a([attribute.href("/downloads")], [
-							button([button.md(), button.solid(button.Primary)], [element.text("Downloads")])
-						]),
-						html.a([attribute.href("https://elysium.lunarie.party")], [
-							button([button.md(), button.solid(button.Neutral)], [element.text("Elysium")])
-						])
-					]),
+	html.main([attribute.class("font-['Poppins'] flex flex-col h-full")], [
+		html.section([attribute.class("max-w-screen-xl mx-auto flex flex-wrap items-center p-4 text-gray-500 sm:text-lg dark:text-gray-400")], [
+			html.section([attribute.class("mb-6")], [
+				html.h2([attribute.class("text-3xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Modpacks")]),
+				html.p([attribute.class("mb-2")], [
+					element.text("To use the modpack, install the launcher, and then drag and drop the ZIP (WITHOUT EXTRACTING) onto the launcher window.")
 				]),
-				html.section([], [
-					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
-						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("What is Lunarie?")]),
-							html.p([attribute.class("mb-4 text-light")], [
-								element.text("
-								Lunarie is a small invite-only Minecraft server and community of people who talk about
-								the game on a semi-regular basis. There have been 4 iterations of the Lunarie survival server.
-								")
-							])
-						])
-					])
-				]),
-				html.section([], [
-					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
-						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Steps")]),
-							html.p([attribute.class("mb-4 text-light")], [
-								element.text("
-								1. Contact the Lunarie admin to register on Elysium."),
-								html.br([]),
-								element.text("2. Download the Elysium Launcher and login with your account."),
-								html.br([]),
-								element.text("3. Download the modpack via the steps shown on the downloads page.")
-							])
-						])
-					])
-				]),
-				//html.section([], [
-				//	html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
-				//		html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-				//			html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("How Do I Play?")]),
-				//			html.p([attribute.class("mb-4 text-light")], [
-				//				element.text("Download the support package with the appropriately labelled 
-				//				button at the top of this website. It includes the recommended launcher,
-				//				java version, and mod pack.
-				//				
-				//				Once all of those have been setup, you can simply launch the game and the server
-				//				will already be in the server list.
-				//				
-				//				To manage the account you will be using to play on Lunarie, you can visit Elysium
-				//				with the button named at the top of the page."),
-				//			]),
-				//			html.video([attribute.attribute("controls", ""), attribute.class("max-h-96")], [
-				//				html.source([attribute.src("https://safe.saya.moe/DmgozGncoecQ.mp4")])
-				//			])
-				//		])
-				//	])
-				//]),
-				html.section([], [
-					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
-						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("History")]),
-							html.p([attribute.class("mb-4 text-light")], [
-								element.text("
-								Lunarie started from some random high school friends who wanted to play Minecraft together,
-								as most Minecraft servers start. At first, the \"Season 1\" was hosted on Aternos. It was a
-								(mostly) Vanilla server, with a few mods for quality of life.
-
-								Season 2 was not on Aternos (wow!) but the server was still underpowered so it used to lag,
-								and this time there were a bit more mods. It lasted for 1 month, until the server had to renew.
-
-								For Season 3, there was an idea of using an Earth map which would've added some interesting roleplay
-								based on countries, but it turns out the execution of it didn't go too well, some things had to be
-								done to accomodate mods like Ad Astra and the players ended up not liking it while playing (and the
-								Pebblehost server was terrible, they will be called out.)
-
-								Season 3 iteration 2 was a normal map, modded server that had some issues with ping due to the
-								server being in the UK and Lunarie being a community of Grenadian players. And it was laggy anyway.
-								")
-							])
-						])
-					])
-				]),
-				html.section([], [
-					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
-						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("This time, it's Zenless.")]),
-							html.p([attribute.class("mb-4 text-light")], [
-								element.text("Lunarie X will be different."),
-								html.br([]),
-								element.text("
-								In the previous season, a mod called Client Key Login was used
-								for authentication, since Lunarie does not require players to buy Minecraft.
-								But this time, there is a custom authentication server which will be a lot
-								more seamless and feel like the real thing.
-								"),
-								html.br([]),
-								element.text("There's also going to be a bit of preliminary admin effort before
-								launch, so it'll actually work a lot better this time and be more optimized!")
-							])
-						])
-					])
+				html.a([attribute.href(config.modpack_link())], [
+					button([button.md(), button.solid(button.Primary)], [element.text("Tempest")])
 				]),
 			]),
-			html.img([
-				attribute.src("/priv/static/wave.svg"),
-				attribute.class("mt-auto")
+			html.section([attribute.class("mb-6")], [
+				html.h2([attribute.class("text-3xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Elysium Launcher")]),
+				html.p([attribute.class("mb-2")], [
+					element.text("To play on Lunarie servers, the Elysium Launcher is required.
+					It's the supported launcher and makes installing modpacks easy.")
+				]),
+				html.section([attribute.class("mb-4")], [
+					html.h2([attribute.class("mb-2 text-1xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Recommended Downloads")]),
+					html.div([attribute.class("flex flex-wrap gap-3")], [
+						html.a([attribute.href(install_link(WindowsInstaller))], [
+							button([button.md(), button.solid_os(button.Windows)], [
+								html.span([attribute.class("icon-windows8")], []),
+								element.text("Win Installer (.exe)")
+							])
+						]),
+						html.a([attribute.href(macos_x86_installer)], [
+							button([button.md(), button.solid_os(button.MacOS)], [
+								html.span([attribute.class("icon-finder")], []),
+								element.text("Mac Intel/x86_64 installer")
+							])
+						]),
+						html.a([attribute.href(macos_arm_installer)], [
+							button([button.md(), button.solid_os(button.MacOS)], [
+								html.span([attribute.class("icon-finder")], []),
+								element.text("Mac M1/ARM installer")
+							])
+						]),
+						html.a([attribute.href(linux_appimage)], [
+							button([button.md(), button.solid_os(button.MacOS)], [
+								html.span([attribute.class("icon-tux")], []),
+								element.text("Linux AppImage")
+							])
+						]),
+						html.a([attribute.href(linux_portable)], [
+							button([button.md(), button.solid_os(button.MacOS)], [
+								html.span([attribute.class("icon-tux")], []),
+								element.text("Linux Portable (.tar.gz)")
+							])
+						]),
+					])
+				]),
+				html.details([attribute.class("[&_span]:open:-rotate-180")], [
+					html.summary([attribute.class("flex cursor-pointer list-none items-center gap-1")], [
+						html.span([attribute.class("icon-chevron-circle-down rotate-0 transform transition-all duration-300"), attribute.attribute("data-dropdown", "true")], []),
+						html.h2([attribute.class("text-2xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("All Downloads")]),
+					]),
+					html.section([attribute.class("mb-4")], [
+						html.h2([attribute.class("text-xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Windows x86_64")]),
+						html.span([attribute.class("mb-4 text-light")], [element.text("The recommended option is the Installer (.exe)")]),
+						html.div([attribute.class("flex flex-wrap gap-4")], [
+							html.a([attribute.href(install_link(WindowsInstaller))], [
+								button([button.md(), button.solid_os(button.Windows)], [
+									html.span([attribute.class("icon-windows8 !transform-none")], []),
+									element.text("Installer (.exe)")
+								])
+							]),
+							html.a([attribute.href(windows_portable_link)], [
+								button([button.md(), button.solid_os(button.Windows)], [
+									html.span([attribute.class("icon-windows8 !transform-none")], []),
+									element.text("Portable (.zip)")
+								])
+							])
+						])
+					]),
+					html.section([attribute.class("mb-4")], [
+						html.h2([attribute.class("text-xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("MacOS")]),
+						html.span([attribute.class("mb-4 text-light")], [element.text("Pick the option that is appropriate based on the Mac you have. Either Intel based or ARM/M1.")]),
+						html.div([attribute.class("flex flex-wrap gap-4")], [
+							html.a([attribute.href(macos_x86_installer)], [
+								button([button.md(), button.solid_os(button.MacOS)], [
+									html.span([attribute.class("icon-finder !transform-none")], []),
+									element.text("Intel/x86_64 installer")
+								])
+							]),
+							html.a([attribute.href(macos_arm_installer)], [
+								button([button.md(), button.solid_os(button.MacOS)], [
+									html.span([attribute.class("icon-finder !transform-none")], []),
+									element.text("M1/ARM installer")
+								])
+							])
+						])
+					]),
+					html.section([attribute.class("mb-4")], [
+						html.h2([attribute.class("text-xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Linux")]),
+						html.span([attribute.class("mb-4 text-light")], [element.text("You should know.")]),
+						html.div([attribute.class("flex flex-wrap gap-4")], [
+							html.a([attribute.href(linux_appimage)], [
+								button([button.md(), button.solid_os(button.MacOS)], [
+									html.span([attribute.class("icon-tux !transform-none")], []),
+									element.text("AppImage")
+								])
+							]),
+							html.a([attribute.href(linux_portable)], [
+								button([button.md(), button.solid_os(button.MacOS)], [
+									html.span([attribute.class("icon-tux !transform-none")], []),
+									element.text("Portable (.tar.gz)")
+								])
+							]),
+							html.a([attribute.href(linux_portable_qt5)], [
+								button([button.md(), button.solid_os(button.MacOS)], [
+									html.span([attribute.class("icon-tux !transform-none")], []),
+									element.text("Portable, Qt 5 (.tar.gz)")
+								])
+							])
+						])
+					])
+				])
 			])
 		]),
+		html.img([
+			attribute.src("/priv/static/wave.svg"),
+			attribute.class("mt-auto")
+		])
 	])
 }
 
+fn install_link(typ: InstallType) {
+	case typ {
+		WindowsInstaller -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Windows-MSVC-Setup-" <> version <> ".exe"
+		WindowsPortable -> ""
+		MacOSIntelInstaller -> ""
+		MacOSArmInstaller -> ""
+		LinuxAppimageInstaller -> ""
+		LinuxPortableInstaller -> ""
+		LinuxPortableQt5Installer -> ""
+	}
+}

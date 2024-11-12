@@ -13,6 +13,7 @@ import config
 import web/pages/home
 import web/pages/not_found
 import web/pages/downloads
+import web/components/button.{button}
 
 pub fn main() {
 	let app = lustre.application(init, update, view)
@@ -73,9 +74,13 @@ fn view(route: Route) -> Element(Msg) {
 					html.span([
 						attribute.class("self-center text-2xl font-bold dark:text-white")
 					], [
-						element.text("Lunarie")
+						element.text("Lunarie"),
+						html.div([attribute.class("self-center font-bold text-xs rounded py-0.5 px-1 bg-purple-500")], [element.text("Tempest")])
 					]),
 				]),
+				html.a([attribute.href("https://elysium.lunarie.party"), attribute.class("flex items-center space-x-3")], [
+					button([button.md(), button.solid(button.Primary)], [element.text("Elysium")])
+				])
 			])
 		]),
 		page
