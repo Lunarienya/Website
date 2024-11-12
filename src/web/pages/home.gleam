@@ -46,7 +46,7 @@ pub fn page() {
 				html.section([], [
 					html.div([attribute.class("py-2 px-2 mx-auto max-w-screen-xl lg:px-3")], [
 						html.div([attribute.class("max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400")], [
-							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("History")]),
+							html.h2([attribute.class("mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Steps")]),
 							html.p([attribute.class("mb-4 text-light")], [
 								element.text("
 								1. Contact the Lunarie admin to register on Elysium."),
