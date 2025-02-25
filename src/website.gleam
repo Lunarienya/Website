@@ -63,10 +63,10 @@ fn view(route: Route) -> Element(Msg) {
 		NotFound -> not_found.page()
 	}
 
-	html.div([attribute.class("h-screen")], [
-		html.nav([attribute.class("bg-zinc-950 w-full")], [
-			html.div([attribute.class("max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4")], [
-				html.a([attribute.href("/"), attribute.class("flex items-center space-x-3")], [
+	html.body([], [
+		html.nav([attribute.class("fixed top-0 left-0 w-full bg-zinc-950 text-white z-50 p-4")], [
+			html.div([attribute.class("container mx-auto")], [
+				html.a([attribute.href("/"), attribute.class("font-bold text-xl flex")], [
 					html.img([
 						attribute.src(config.logo()),
 						attribute.class("h-12")
@@ -75,13 +75,9 @@ fn view(route: Route) -> Element(Msg) {
 						attribute.class("self-center text-2xl font-bold dark:text-white")
 					], [
 						element.text("Lunarie"),
-						html.div([attribute.class("self-center font-bold text-xs rounded py-0.5 px-1 bg-purple-500")], [element.text("Tempest")])
 					]),
 				]),
-				html.a([attribute.href("https://elysium.lunarie.party"), attribute.class("flex items-center space-x-3")], [
-					button([button.md(), button.solid(button.Primary)], [element.text("Elysium")])
-				])
-			])
+			]),
 		]),
 		page
 	])
