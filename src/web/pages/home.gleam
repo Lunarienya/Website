@@ -17,15 +17,6 @@ type InstallType {
 	LinuxPortableQt5Installer
 }
 
-const windows_portable_link = ""
-
-const macos_x86_installer = ""
-const macos_arm_installer = ""
-
-const linux_appimage = ""
-const linux_portable = ""
-const linux_portable_qt5 = ""
-
 pub fn page() {
   html.main([attribute.class("font-['Poppins'] snap-y ")], [
     html.div([attribute.class("h-dvh flex flex-col gap-4 justify-center items-center snap-start")], [
@@ -114,25 +105,25 @@ pub fn page() {
                   element.text("Win Installer (.exe)")
                 ])
               ]),
-              html.a([attribute.href(macos_x86_installer)], [
+              html.a([attribute.href(install_link(MacOSIntelInstaller))], [
                 button([button.md(), button.solid_os(button.MacOS)], [
                   html.span([attribute.class("icon-finder")], []),
                   element.text("Mac Intel/x86_64 installer")
                 ])
               ]),
-              html.a([attribute.href(macos_arm_installer)], [
+              html.a([attribute.href(install_link(MacOSArmInstaller))], [
                 button([button.md(), button.solid_os(button.MacOS)], [
                   html.span([attribute.class("icon-finder")], []),
                   element.text("Mac M1/ARM installer")
                 ])
               ]),
-              html.a([attribute.href(linux_appimage)], [
+              html.a([attribute.href(install_link(LinuxAppimageInstaller))], [
                 button([button.md(), button.solid_os(button.MacOS)], [
                   html.span([attribute.class("icon-tux")], []),
                   element.text("Linux AppImage")
                 ])
               ]),
-              html.a([attribute.href(linux_portable)], [
+              html.a([attribute.href(install_link(LinuxPortableInstaller))], [
                 button([button.md(), button.solid_os(button.MacOS)], [
                   html.span([attribute.class("icon-tux")], []),
                   element.text("Linux Portable (.tar.gz)")
@@ -155,7 +146,7 @@ pub fn page() {
                     element.text("Installer (.exe)")
                   ])
                 ]),
-                html.a([attribute.href(windows_portable_link)], [
+                html.a([attribute.href(install_link(WindowsPortable))], [
                   button([button.md(), button.solid_os(button.Windows)], [
                     html.span([attribute.class("icon-windows8 !transform-none")], []),
                     element.text("Portable (.zip)")
@@ -167,13 +158,13 @@ pub fn page() {
               html.h2([attribute.class("text-lg tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("MacOS")]),
               html.span([attribute.class("mb-2 text-light")], [element.text("Pick the option that is appropriate based on the Mac you have. Either Intel based or ARM/M1.")]),
               html.div([attribute.class("flex flex-wrap gap-2")], [
-                html.a([attribute.href(macos_x86_installer)], [
+                html.a([attribute.href(install_link(MacOSIntelInstaller))], [
                   button([button.md(), button.solid_os(button.MacOS)], [
                     html.span([attribute.class("icon-finder !transform-none")], []),
                     element.text("Intel/x86_64 installer")
                   ])
                 ]),
-                html.a([attribute.href(macos_arm_installer)], [
+                html.a([attribute.href(install_link(MacOSArmInstaller))], [
                   button([button.md(), button.solid_os(button.MacOS)], [
                     html.span([attribute.class("icon-finder !transform-none")], []),
                     element.text("M1/ARM installer")
@@ -185,19 +176,19 @@ pub fn page() {
               html.h2([attribute.class("text-lg tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Linux")]),
               html.span([attribute.class("mb-2 text-light")], [element.text("You should know.")]),
               html.div([attribute.class("flex flex-wrap gap-2")], [
-                html.a([attribute.href(linux_appimage)], [
+                html.a([attribute.href(install_link(LinuxAppimageInstaller))], [
                   button([button.md(), button.solid_os(button.MacOS)], [
                     html.span([attribute.class("icon-tux !transform-none")], []),
                     element.text("AppImage")
                   ])
                 ]),
-                html.a([attribute.href(linux_portable)], [
+                html.a([attribute.href(install_link(LinuxPortableInstaller))], [
                   button([button.md(), button.solid_os(button.MacOS)], [
                     html.span([attribute.class("icon-tux !transform-none")], []),
                     element.text("Portable (.tar.gz)")
                   ])
                 ]),
-                html.a([attribute.href(linux_portable_qt5)], [
+                html.a([attribute.href(install_link(LinuxPortableQt5Installer))], [
                   button([button.md(), button.solid_os(button.MacOS)], [
                     html.span([attribute.class("icon-tux !transform-none")], []),
                     element.text("Portable, Qt 5 (.tar.gz)")
@@ -245,11 +236,11 @@ pub fn page() {
 fn install_link(typ: InstallType) {
 	case typ {
 		WindowsInstaller -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Windows-MSVC-Setup-" <> version <> ".exe"
-		WindowsPortable -> ""
+		WindowsPortable -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Windows-MSVC-Portable-" <> version <> ".zip"
 		MacOSIntelInstaller -> ""
 		MacOSArmInstaller -> ""
-		LinuxAppimageInstaller -> ""
-		LinuxPortableInstaller -> ""
-		LinuxPortableQt5Installer -> ""
+		LinuxAppimageInstaller -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Linux-x86_64.AppImage"
+		LinuxPortableInstaller -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Linux-Qt6-Portable-v1.1.tar.gz"
+		LinuxPortableQt5Installer -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Linux-Qt5-Portable-v1.1.tar.gz"
 	}
 }
