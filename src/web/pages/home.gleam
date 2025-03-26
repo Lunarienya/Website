@@ -217,14 +217,14 @@ pub fn page() {
             ]),
           ]),
           html.p([attribute.class("text-white")], [
-            element.text("Download the Tempest modpack, which is a ZIP file, and drag and drop it from your file manager to the launcher window."),
+            element.text("Download the Solstice modpack, which is a ZIP file, and drag and drop it from your file manager to the launcher window."),
             html.br([]),
-            element.text("Click the Tempest button below to download it."),
+            element.text("Click the Solstice button below to download it."),
             html.br([]),
           ]),
           html.div([attribute.class("flex flex-wrap gap-2")], [
             html.a([attribute.href(config.modpack_link())], [
-              button([button.md(), button.solid(button.Primary)], [element.text("Tempest")]),
+              button([button.md(), button.solid(button.Primary)], [element.text("Solstice")]),
             ]),
           ])
         ])
