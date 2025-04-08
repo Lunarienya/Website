@@ -70,7 +70,7 @@ pub fn page() {
             element.text("Registration is invite-only, though you should've been sent a link from an admin.")
           ]),
           html.div([attribute.class("flex flex-wrap gap-2")], [
-            html.a([attribute.href("/downloads")], [
+            html.a([attribute.href("https://elysium.lunarie.party")], [
               button([button.md(), button.solid(button.Primary)], [element.text("Elysium")]),
             ]),
           ])
