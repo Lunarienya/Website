@@ -3,7 +3,7 @@ pub fn logo() -> String {
 }
 
 pub fn modpack_link() -> String {
-	"https://github.com/Lunarienya/Solstice/raw/refs/heads/main/Lunarie%20Solstice.zip"
+	"https://git.astrality.party/Lunarie/Equinox/raw/branch/main/Lunarie%20Equinox.zip"
 }
 
 pub fn modpack_link_rogue() -> String {

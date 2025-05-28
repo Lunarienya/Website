@@ -217,21 +217,14 @@ pub fn page() {
             ]),
           ]),
           html.p([attribute.class("text-white")], [
-            element.text("These 2 modpacks are for 2 different servers. The regular, vanilla+ survival multiplayer is the Solstice instance."),
-            html.br([]),
-            element.text("While Rogue is a Roguecraft server. You'll more than likely want to download the Solstice instance."),
-            html.br([]),
             element.text("Once downloaded, you can drag and drop the ZIP file onto the launcher window."),
             html.br([]),
-            element.text("Click the Solstice button below to download it."),
+            element.text("Click the Equinox button below to download it."),
             html.br([]),
           ]),
           html.div([attribute.class("flex flex-wrap gap-2")], [
             html.a([attribute.href(config.modpack_link())], [
               button([button.md(), button.solid(button.Primary)], [element.text("Solstice")]),
-            ]),
-            html.a([attribute.href(config.modpack_link())], [
-              button([button.md(), button.solid(button.Primary)], [element.text("Rogue")]),
             ]),
           ])
         ])
