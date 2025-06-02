@@ -224,7 +224,7 @@ pub fn page() {
           ]),
           html.div([attribute.class("flex flex-wrap gap-2")], [
             html.a([attribute.href(config.modpack_link())], [
-              button([button.md(), button.solid(button.Primary)], [element.text("Solstice")]),
+              button([button.md(), button.solid(button.Primary)], [element.text("Equinox")]),
             ]),
           ])
         ])
