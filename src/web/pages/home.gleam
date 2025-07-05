@@ -1,246 +1,375 @@
-import lustre/attribute.{attribute}
+import lustre/attribute
 import lustre/element
 import lustre/element/html
 
 import web/components/button.{button}
-import config
 
 const version = "v1.1"
 
 type InstallType {
-	WindowsInstaller
-	WindowsPortable
-	MacOSIntelInstaller
-	MacOSArmInstaller
-	LinuxAppimageInstaller
-	LinuxPortableInstaller
-	LinuxPortableQt5Installer
+  WindowsInstaller
+  WindowsPortable
+  MacOSIntelInstaller
+  MacOSArmInstaller
+  LinuxAppimageInstaller
+  LinuxPortableInstaller
+  LinuxPortableQt5Installer
 }
 
 pub fn page() {
-  html.main([attribute.class("font-['Poppins'] snap-y ")], [
-    html.div([attribute.class("h-dvh flex flex-col gap-4 justify-center items-center snap-start")], [
-      html.section([attribute.class("flex gap-4 justify-center items-center mt-auto p-2")], [
-        html.img([
-          attribute.src(config.logo()),
-          attribute.class("h-48")
-        ]),
-        html.div([attribute.class("flex flex-col gap-2")], [
-          html.div([], [
-            html.h2([attribute.class("flex flex-wrap items-center text-4xl tracking-tight font-bold text-white")], [
-              element.text("The"),
-              html.img([attribute.class("h-16 sm:h-20"), attribute.src("/priv/static/astrality.svg")]),
+  html.main([attribute.class("min-h-screen flex flex-col")], [
+    html.div(
+      [
+        attribute.class(
+          "h-screen flex flex-nowrap flex-col p-4 space-y-5 items-center justify-center border-b-2 border-b-zinc-600",
+        ),
+      ],
+      [
+        html.div(
+          [
+            attribute.class(
+              "gap-2 md:w-full flex flex-row flex-wrap md:flex-nowrap items-center justify-center md:justify-evenly",
+            ),
+          ],
+          [
+            html.img([
+              attribute.src(
+                "https://assets.astrality.party/brand/lunarie/lunarie.svg",
+              ),
+              attribute.class("w-1/5"),
             ]),
-            html.h2([attribute.class("gap-0 text-4xl tracking-tight font-bold text-white")], [
-              element.text("Minecraft server.")
+            html.div([attribute.class("flex flex-col gap-4")], [
+              html.h1([attribute.class("text-7xl font-bold")], [
+                element.text("Lunarie: Andromeda"),
+              ]),
+              html.h2([attribute.class("text-3xl font-semibold")], [
+                element.text("The final frontier."),
+              ]),
+              html.p([], [
+                element.text("A lightly modded, free to play Minecraft server."),
+                html.br([]),
+                element.text(
+                  "We provide a custom launcher and account system, so you play Minecraft with others at zero cost.",
+                ),
+                html.br([]),
+                element.text("No Microsft account with Minecraft required."),
+              ]),
+              html.a(
+                [
+                  attribute.href("https://elysium.lunarie.party"),
+                  attribute.target("_blank"),
+                ],
+                [
+                  html.button(
+                    [
+                      attribute.class(
+                        "flex gap-2 items-center justify-center transition-all active:enabled:scale-[98%] disabled:opacity-50 disabled:cursor-not-allowed rounded px-4 py-2 text-base bg-zinc-700 text-white hover:enabled:bg-neutral/90",
+                      ),
+                    ],
+                    [element.text("Elysium")],
+                  ),
+                ],
+              ),
             ]),
+          ],
+        ),
+      ],
+    ),
+    html.div([attribute.class("flex flex-col gap-10")], [
+      html.div(
+        [
+          attribute.class(
+            "px-6 h-screen flex flex-col gap-2 items-center justify-center border-b border-b-zinc-600",
+          ),
+        ],
+        [
+          html.h1([attribute.class("text-6xl font-bold mb-2")], [
+            element.text("Step 1: Get On Elysium"),
           ]),
-          html.p([attribute.class("text-white")], [
-            element.text("A community-based vanilla+ Minecraft server to build, make friends and have fun.")
+          html.p([attribute.class("text-center")], [
+            element.text(
+              "Lunarie is invite only. If you have been asked to join by a Lunarie member,",
+            ),
+            html.br([]),
+            element.text(
+              "you will be added to the appropriate channels (WhatsApp and/or Discord).",
+            ),
+            html.br([]),
+            html.br([]),
+            element.text(
+              "To login on the launcher, you need a Minecraft profile, which is managed separately by the Elysium service. Click the button below, then login with Astrality. Copy the Minecraft Token from your Elysium profile, as that is what you have to use as your password to login on the launcher.",
+            ),
           ]),
-          html.div([attribute.class("flex flex-wrap gap-2")], [
-            html.a([attribute.href("https://elysium.lunarie.party")], [
-              button([button.md(), button.solid(button.Neutral)], [element.text("Elysium")]),
-            ])
-          ])
-        ])
+          html.video(
+            [attribute.class("rounded-lg md:w-1/2"), attribute.controls(True)],
+            [
+              html.source([
+                attribute.src(
+                  "https://assets.astrality.party/lunarie/website/videos/video-1-elyisum.mp4",
+                ),
+                attribute.type_("video/mp4"),
+              ]),
+            ],
+          ),
+        ],
+      ),
+      html.div(
+        [
+          attribute.class(
+            "px-6 h-screen flex flex-col gap-2 items-center justify-center border-b border-b-zinc-600",
+          ),
+        ],
+        [
+          html.h1([attribute.class("text-6xl font-bold mb-2")], [
+            element.text("Step 2: Download & Install The Launcher"),
+          ]),
+          html.p([attribute.class("")], [
+            element.text("Elysium Launcher is required to play."),
+          ]),
+          downloads(),
+        ],
+      ),
+      html.div(
+        [
+          attribute.class(
+            "px-6 h-screen flex flex-col gap-2 items-center justify-center border-b border-b-zinc-600",
+          ),
+        ],
+        [
+          html.h1([attribute.class("text-6xl font-bold mb-2")], [
+            element.text("Step 3: Setup The Launcher"),
+          ]),
+          html.p([attribute.class("")], [
+            element.text(
+              "Run the launcher for the first time setup, then download Java in the launcher (if you don't have Java 21 installed).",
+            ),
+          ]),
+          html.video(
+            [attribute.class("rounded-lg md:w-1/2"), attribute.controls(True)],
+            [
+              html.source([
+                attribute.src(
+                  "https://assets.astrality.party/lunarie/website/videos/video-2-launcher.mp4",
+                ),
+                attribute.type_("video/mp4"),
+              ]),
+            ],
+          ),
+        ],
+      ),
+      html.div(
+        [
+          attribute.class(
+            "px-6 h-screen flex flex-col gap-2 items-center justify-center border-b border-b-zinc-600",
+          ),
+        ],
+        [
+          html.h1([attribute.class("text-6xl font-bold mb-2")], [
+            element.text("Step 4: Add Andromeda & Play!"),
+          ]),
+          html.p([attribute.class("")], [
+            element.text("The final step, drag and drop the Andromeda zip "),
+            html.b([], [element.text("(do NOT extract it)")]),
+            element.text(
+              " and double click to launch. Click the button below to download.",
+            ),
+          ]),
+          html.a(
+            [
+              attribute.href(
+                "https://assets.astrality.party/lunarie/instances/Lunarie%20Andromeda.zip",
+              ),
+            ],
+            [
+              html.button(
+                [
+                  attribute.class(
+                    "bg-violet-500 rounded px-4 py-2 text-base text-white hover:enabled:bg-primary/90 flex gap-2 items-center justify-center transition-all active:enabled:scale-[98%] disabled:opacity-50 disabled:cursor-not-allowed",
+                  ),
+                ],
+                [element.text("Andromeda")],
+              ),
+            ],
+          ),
+          html.video(
+            [attribute.class("rounded-lg md:w-1/2"), attribute.controls(True)],
+            [
+              html.source([
+                attribute.src(
+                  "https://assets.astrality.party/lunarie/website/videos/video-3-instance.mp4",
+                ),
+                attribute.type_("video/mp4"),
+              ]),
+            ],
+          ),
+        ],
+      ),
+    ]),
+  ])
+}
+
+fn downloads() {
+  html.section([attribute.class("mb-4")], [
+    html.section([attribute.class("mb-4")], [
+      html.h2([attribute.class("mb-1 text-xl tracking-tight font-bold")], [
+        element.text("Recommended Downloads"),
       ]),
-      html.img([
-        attribute.src("/priv/static/wave.svg"),
-        attribute.class("block mt-auto") // Removed mt-6
-      ])
-    ]),
-    html.img([
-      attribute.src("/priv/static/wave-2a.svg"),
-      attribute.class("rotate-180 block -mt-[2px]") // Adjusted negative margin
-    ]),
-    html.div([attribute.class("h-80 flex flex-col gap-3 justify-center items-center snap-start")], [
-      html.section([attribute.class("flex gap-4 justify-center items-center p-4")], [
-        html.div([attribute.class("flex flex-col gap-2")], [
-          html.div([], [
-            html.h2([attribute.class("gap-0 text-4xl tracking-tight font-bold text-white")], [
-              element.text("Step 1: Register for Elysium")
-            ]),
-          ]),
-          html.p([attribute.class("text-white")], [
-            element.text("Elysium is the accounts server/system for the Lunarie server. This is used instead of a Microsoft account on the custom launcher."),
-            html.br([]),
-            element.text("You can manage your skin, cape, and username on Elysium."),
-            html.br([]),
-            element.text("Registration is invite-only, though you should've been sent a link from an admin.")
-          ]),
-          html.div([attribute.class("flex flex-wrap gap-2")], [
-            html.a([attribute.href("https://elysium.lunarie.party")], [
-              button([button.md(), button.solid(button.Primary)], [element.text("Elysium")]),
-            ]),
-          ])
-        ])
-      ]),
-    ]),
-    html.img([
-      attribute.src("/priv/static/wave-2b.svg"),
-      attribute.class("mt-0 block")
-    ]),
-    html.img([
-      attribute.src("/priv/static/wave-2a.svg"),
-      attribute.class("rotate-180 block -mt-[1px]")
-    ]),
-    html.section([attribute.class("h-svh flex justify-center items-center snap-start p-4")], [
-      html.div([attribute.class("flex flex-col gap-2")], [
-        html.div([], [
-          html.h2([attribute.class("gap-0 text-4xl tracking-tight font-bold text-white")], [
-            element.text("Step 2: Download the launcher")
+      html.div([attribute.class("flex flex-wrap gap-2")], [
+        html.a([attribute.href(install_link(WindowsInstaller))], [
+          button([button.md(), button.solid_os(button.Windows)], [
+            html.span([attribute.class("icon-windows8")], []),
+            element.text("Win Installer (.exe)"),
           ]),
         ]),
-        html.p([attribute.class("text-white")], [
-          element.text("Elysium Launcher is used to sign in to your Elysium account and add the mod pack for the server."),
+        html.a([attribute.href(install_link(MacOSIntelInstaller))], [
+          button([button.md(), button.solid_os(button.MacOS)], [
+            html.span([attribute.class("icon-finder")], []),
+            element.text("Mac Intel/x86_64 installer"),
+          ]),
         ]),
-        html.section([attribute.class("mb-4")], [
-          html.section([attribute.class("mb-2")], [
-            html.h2([attribute.class("mb-1 text-xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Recommended Downloads")]),
-            html.div([attribute.class("flex flex-wrap gap-2")], [
-              html.a([attribute.href(install_link(WindowsInstaller))], [
-                button([button.md(), button.solid_os(button.Windows)], [
-                  html.span([attribute.class("icon-windows8")], []),
-                  element.text("Win Installer (.exe)")
-                ])
-              ]),
-              html.a([attribute.href(install_link(MacOSIntelInstaller))], [
-                button([button.md(), button.solid_os(button.MacOS)], [
-                  html.span([attribute.class("icon-finder")], []),
-                  element.text("Mac Intel/x86_64 installer")
-                ])
-              ]),
-              html.a([attribute.href(install_link(MacOSArmInstaller))], [
-                button([button.md(), button.solid_os(button.MacOS)], [
-                  html.span([attribute.class("icon-finder")], []),
-                  element.text("Mac M1/ARM installer")
-                ])
-              ]),
-              html.a([attribute.href(install_link(LinuxAppimageInstaller))], [
-                button([button.md(), button.solid_os(button.MacOS)], [
-                  html.span([attribute.class("icon-tux")], []),
-                  element.text("Linux AppImage")
-                ])
-              ]),
-              html.a([attribute.href(install_link(LinuxPortableInstaller))], [
-                button([button.md(), button.solid_os(button.MacOS)], [
-                  html.span([attribute.class("icon-tux")], []),
-                  element.text("Linux Portable (.tar.gz)")
-                ])
-              ]),
-            ])
+        html.a([attribute.href(install_link(MacOSArmInstaller))], [
+          button([button.md(), button.solid_os(button.MacOS)], [
+            html.span([attribute.class("icon-finder")], []),
+            element.text("Mac M1/ARM installer"),
           ]),
-          html.details([attribute.class("[&_span]:open:-rotate-180")], [
-            html.summary([attribute.class("flex cursor-pointer list-none items-center gap-1")], [
-              html.span([attribute.class("icon-chevron-circle-down rotate-0 transform transition-all duration-300"), attribute.attribute("data-dropdown", "true")], []),
-              html.h2([attribute.class("text-xl tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("All Downloads")]),
-            ]),
-            html.section([attribute.class("mb-2")], [
-              html.h2([attribute.class("text-lg tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Windows x86_64")]),
-              html.span([attribute.class("mb-2 text-light")], [element.text("The recommended option is the Installer (.exe)")]),
-              html.div([attribute.class("flex flex-wrap gap-2")], [
-                html.a([attribute.href(install_link(WindowsInstaller))], [
-                  button([button.md(), button.solid_os(button.Windows)], [
-                    html.span([attribute.class("icon-windows8 !transform-none")], []),
-                    element.text("Installer (.exe)")
-                  ])
-                ]),
-                html.a([attribute.href(install_link(WindowsPortable))], [
-                  button([button.md(), button.solid_os(button.Windows)], [
-                    html.span([attribute.class("icon-windows8 !transform-none")], []),
-                    element.text("Portable (.zip)")
-                  ])
-                ])
-              ])
-            ]),
-            html.section([attribute.class("mb-2")], [
-              html.h2([attribute.class("text-lg tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("MacOS")]),
-              html.span([attribute.class("mb-2 text-light")], [element.text("Pick the option that is appropriate based on the Mac you have. Either Intel based or ARM/M1.")]),
-              html.div([attribute.class("flex flex-wrap gap-2")], [
-                html.a([attribute.href(install_link(MacOSIntelInstaller))], [
-                  button([button.md(), button.solid_os(button.MacOS)], [
-                    html.span([attribute.class("icon-finder !transform-none")], []),
-                    element.text("Intel/x86_64 installer")
-                  ])
-                ]),
-                html.a([attribute.href(install_link(MacOSArmInstaller))], [
-                  button([button.md(), button.solid_os(button.MacOS)], [
-                    html.span([attribute.class("icon-finder !transform-none")], []),
-                    element.text("M1/ARM installer")
-                  ])
-                ])
-              ])
-            ]),
-            html.section([attribute.class("mb-2")], [
-              html.h2([attribute.class("text-lg tracking-tight font-bold text-gray-900 dark:text-white")], [element.text("Linux")]),
-              html.span([attribute.class("mb-2 text-light")], [element.text("You should know.")]),
-              html.div([attribute.class("flex flex-wrap gap-2")], [
-                html.a([attribute.href(install_link(LinuxAppimageInstaller))], [
-                  button([button.md(), button.solid_os(button.MacOS)], [
-                    html.span([attribute.class("icon-tux !transform-none")], []),
-                    element.text("AppImage")
-                  ])
-                ]),
-                html.a([attribute.href(install_link(LinuxPortableInstaller))], [
-                  button([button.md(), button.solid_os(button.MacOS)], [
-                    html.span([attribute.class("icon-tux !transform-none")], []),
-                    element.text("Portable (.tar.gz)")
-                  ])
-                ]),
-                html.a([attribute.href(install_link(LinuxPortableQt5Installer))], [
-                  button([button.md(), button.solid_os(button.MacOS)], [
-                    html.span([attribute.class("icon-tux !transform-none")], []),
-                    element.text("Portable, Qt 5 (.tar.gz)")
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ]),
-    html.img([
-      attribute.src("/priv/static/wave-2b.svg"),
-      attribute.class("mt-0 block")
-    ]),
-    html.div([attribute.class("h-dvh flex flex-col gap-4 justify-center items-center snap-start")], [
-      html.img([
-        attribute.src("/priv/static/wave-2a.svg"),
-        attribute.class("rotate-180 block -mt-[1px]")
+        ]),
+        html.a([attribute.href(install_link(LinuxAppimageInstaller))], [
+          button([button.md(), button.solid_os(button.MacOS)], [
+            html.span([attribute.class("icon-tux")], []),
+            element.text("Linux AppImage"),
+          ]),
+        ]),
+        html.a([attribute.href(install_link(LinuxPortableInstaller))], [
+          button([button.md(), button.solid_os(button.MacOS)], [
+            html.span([attribute.class("icon-tux")], []),
+            element.text("Linux Portable (.tar.gz)"),
+          ]),
+        ]),
       ]),
-      html.section([attribute.class("mt-auto mb-auto flex gap-4 justify-center items-center p-4")], [
-        html.div([attribute.class("flex flex-col gap-2")], [
-          html.div([], [
-            html.h2([attribute.class("gap-0 text-4xl tracking-tight font-bold text-white")], [
-              element.text("Step 3: Add the instance (modpack) to the launcher")
+    ]),
+    html.details([attribute.class("[&_span]:open:-rotate-180")], [
+      html.summary(
+        [attribute.class("flex cursor-pointer list-none items-center gap-1 mb")],
+        [
+          html.span(
+            [
+              attribute.class(
+                "icon-chevron-circle-down rotate-0 transform transition-all duration-300",
+              ),
+              attribute.attribute("data-dropdown", "true"),
+            ],
+            [],
+          ),
+          html.h2([attribute.class("text-xl tracking-tight font-bold")], [
+            element.text("All Downloads"),
+          ]),
+        ],
+      ),
+      html.section([attribute.class("mb-4")], [
+        html.h2([attribute.class("text-lg tracking-tight font-bold")], [
+          element.text("Windows x86_64"),
+        ]),
+        html.span([attribute.class("mb-2 text-light")], [
+          element.text("The recommended option is the Installer (.exe)"),
+        ]),
+        html.div([attribute.class("flex flex-wrap gap-2")], [
+          html.a([attribute.href(install_link(WindowsInstaller))], [
+            button([button.md(), button.solid_os(button.Windows)], [
+              html.span([attribute.class("icon-windows8 !transform-none")], []),
+              element.text("Installer (.exe)"),
             ]),
           ]),
-          html.p([attribute.class("text-white")], [
-            element.text("Once downloaded, you can drag and drop the ZIP file onto the launcher window."),
-            html.br([]),
-            element.text("Click the Equinox button below to download it."),
-            html.br([]),
-          ]),
-          html.div([attribute.class("flex flex-wrap gap-2")], [
-            html.a([attribute.href(config.modpack_link())], [
-              button([button.md(), button.solid(button.Primary)], [element.text("Equinox")]),
+          html.a([attribute.href(install_link(WindowsPortable))], [
+            button([button.md(), button.solid_os(button.Windows)], [
+              html.span([attribute.class("icon-windows8 !transform-none")], []),
+              element.text("Portable (.zip)"),
             ]),
-          ])
-        ])
+          ]),
+        ]),
+      ]),
+      html.section([attribute.class("mb-4")], [
+        html.h2([attribute.class("text-lg tracking-tight font-bold")], [
+          element.text("MacOS"),
+        ]),
+        html.span([attribute.class("mb-2 text-light")], [
+          element.text(
+            "Pick the option that is appropriate based on the Mac you have. Either Intel based or ARM/M1.",
+          ),
+        ]),
+        html.div([attribute.class("flex flex-wrap gap-2")], [
+          html.a([attribute.href(install_link(MacOSIntelInstaller))], [
+            button([button.md(), button.solid_os(button.MacOS)], [
+              html.span([attribute.class("icon-finder !transform-none")], []),
+              element.text("Intel/x86_64 installer"),
+            ]),
+          ]),
+          html.a([attribute.href(install_link(MacOSArmInstaller))], [
+            button([button.md(), button.solid_os(button.MacOS)], [
+              html.span([attribute.class("icon-finder !transform-none")], []),
+              element.text("M1/ARM installer"),
+            ]),
+          ]),
+        ]),
+      ]),
+      html.section([attribute.class("mb-4")], [
+        html.h2([attribute.class("text-lg tracking-tight font-bold")], [
+          element.text("Linux"),
+        ]),
+        html.span([attribute.class("mb-2 text-light")], [
+          element.text("You should know."),
+        ]),
+        html.div([attribute.class("flex flex-wrap gap-2")], [
+          html.a([attribute.href(install_link(LinuxAppimageInstaller))], [
+            button([button.md(), button.solid_os(button.MacOS)], [
+              html.span([attribute.class("icon-tux !transform-none")], []),
+              element.text("AppImage"),
+            ]),
+          ]),
+          html.a([attribute.href(install_link(LinuxPortableInstaller))], [
+            button([button.md(), button.solid_os(button.MacOS)], [
+              html.span([attribute.class("icon-tux !transform-none")], []),
+              element.text("Portable (.tar.gz)"),
+            ]),
+          ]),
+          html.a([attribute.href(install_link(LinuxPortableQt5Installer))], [
+            button([button.md(), button.solid_os(button.MacOS)], [
+              html.span([attribute.class("icon-tux !transform-none")], []),
+              element.text("Portable, Qt 5 (.tar.gz)"),
+            ]),
+          ]),
+        ]),
       ]),
     ]),
   ])
 }
 
 fn install_link(typ: InstallType) {
-	case typ {
-		WindowsInstaller -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Windows-MSVC-Setup-" <> version <> ".exe"
-		WindowsPortable -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Windows-MSVC-Portable-" <> version <> ".zip"
-		MacOSIntelInstaller -> ""
-		MacOSArmInstaller -> ""
-		LinuxAppimageInstaller -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Linux-x86_64.AppImage"
-		LinuxPortableInstaller -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Linux-Qt6-Portable-v1.1.tar.gz"
-		LinuxPortableQt5Installer -> "https://github.com/Lunarienya/ElysiumLauncher/releases/download/" <> version <> "/ElysiumLauncher-Linux-Qt5-Portable-v1.1.tar.gz"
-	}
+  case typ {
+    WindowsInstaller ->
+      "https://github.com/Lunarienya/ElysiumLauncher/releases/download/"
+      <> version
+      <> "/ElysiumLauncher-Windows-MSVC-Setup-"
+      <> version
+      <> ".exe"
+    WindowsPortable ->
+      "https://github.com/Lunarienya/ElysiumLauncher/releases/download/"
+      <> version
+      <> "/ElysiumLauncher-Windows-MSVC-Portable-"
+      <> version
+      <> ".zip"
+    MacOSIntelInstaller -> ""
+    MacOSArmInstaller -> ""
+    LinuxAppimageInstaller ->
+      "https://github.com/Lunarienya/ElysiumLauncher/releases/download/"
+      <> version
+      <> "/ElysiumLauncher-Linux-x86_64.AppImage"
+    LinuxPortableInstaller ->
+      "https://github.com/Lunarienya/ElysiumLauncher/releases/download/"
+      <> version
+      <> "/ElysiumLauncher-Linux-Qt6-Portable-v1.1.tar.gz"
+    LinuxPortableQt5Installer ->
+      "https://github.com/Lunarienya/ElysiumLauncher/releases/download/"
+      <> version
+      <> "/ElysiumLauncher-Linux-Qt5-Portable-v1.1.tar.gz"
+  }
 }
