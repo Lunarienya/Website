@@ -34,13 +34,13 @@ pub fn page() {
           [
             html.img([
               attribute.src(
-                "https://assets.astrality.party/brand/lunarie/lunarie.svg",
+                "https://assets.astrality.party/brand/lunarie/lunarie-wb.png",
               ),
               attribute.class("w-1/5"),
             ]),
             html.div([attribute.class("flex flex-col gap-4")], [
               html.h1([attribute.class("text-7xl font-bold")], [
-                element.text("Lunarie: Andromeda"),
+                element.text("Lunarie: Zero"),
               ]),
               html.h2([attribute.class("text-3xl font-semibold")], [
                 element.text("The final frontier."),
@@ -165,29 +165,29 @@ pub fn page() {
         ],
         [
           html.h1([attribute.class("text-6xl font-bold mb-2")], [
-            element.text("Step 4: Add Andromeda & Play!"),
+            element.text("Step 4: Add the Zero modpack & Play!"),
           ]),
           html.p([attribute.class("")], [
-            element.text("The final step, drag and drop the Andromeda zip "),
+            element.text("The final step, drag and drop the Zero zip "),
             html.b([], [element.text("(do NOT extract it)")]),
             element.text(
-              " and double click to launch. Click the button below to download.",
+              " on the launcher and double click to launch. Click the button below to download.",
             ),
           ]),
           html.a(
             [
               attribute.href(
-                "https://assets.astrality.party/lunarie/instances/Lunarie%20Andromeda.zip",
+                "https://assets.astrality.party/lunarie/instances/Lunarie%20Zero.zip",
               ),
             ],
             [
               html.button(
                 [
                   attribute.class(
-                    "bg-violet-500 rounded px-4 py-2 text-base text-white hover:enabled:bg-primary/90 flex gap-2 items-center justify-center transition-all active:enabled:scale-[98%] disabled:opacity-50 disabled:cursor-not-allowed",
+                    "bg-black border-4 border-white rounded px-4 py-2 text-base text-white hover:enabled:bg-primary/90 flex gap-2 items-center justify-center transition-all active:enabled:scale-[98%] disabled:opacity-50 disabled:cursor-not-allowed",
                   ),
                 ],
-                [element.text("Andromeda")],
+                [element.text("Zero")],
               ),
             ],
           ),
