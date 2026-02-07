@@ -12,6 +12,7 @@ type InstallType {
   MacOSIntelInstaller
   MacOSArmInstaller
   LinuxAppimageInstaller
+  LinuxFlatpakInstaller
   LinuxPortableInstaller
   LinuxPortableQt5Installer
 }
@@ -227,16 +228,16 @@ fn downloads() {
             element.text("Mac Intel/x86_64 installer"),
           ]),
         ]),
-        html.a([attribute.href(install_link(MacOSArmInstaller))], [
-          button([button.md(), button.solid_os(button.MacOS)], [
-            html.span([attribute.class("icon-finder")], []),
-            element.text("Mac M1/ARM installer"),
-          ]),
-        ]),
         html.a([attribute.href(install_link(LinuxAppimageInstaller))], [
           button([button.md(), button.solid_os(button.MacOS)], [
             html.span([attribute.class("icon-tux")], []),
             element.text("Linux AppImage"),
+          ]),
+        ]),
+        html.a([attribute.href(install_link(LinuxFlatpakInstaller))], [
+          button([button.md(), button.solid_os(button.MacOS)], [
+            html.span([attribute.class("icon-tux")], []),
+            element.text("Linux Flatpak"),
           ]),
         ]),
         html.a([attribute.href(install_link(LinuxPortableInstaller))], [
@@ -325,6 +326,12 @@ fn downloads() {
               element.text("AppImage"),
             ]),
           ]),
+          html.a([attribute.href(install_link(LinuxFlatpakInstaller))], [
+            button([button.md(), button.solid_os(button.MacOS)], [
+              html.span([attribute.class("icon-tux !transform-none")], []),
+              element.text("Flatpak"),
+            ]),
+          ]),
           html.a([attribute.href(install_link(LinuxPortableInstaller))], [
             button([button.md(), button.solid_os(button.MacOS)], [
               html.span([attribute.class("icon-tux !transform-none")], []),
@@ -359,6 +366,7 @@ fn install_link(typ: InstallType) {
       <> ".zip"
     MacOSIntelInstaller -> ""
     MacOSArmInstaller -> ""
+    LinuxFlatpakInstaller -> "https://assets.astrality.party/website-assets/ElysiumLauncher-Linux-1781ba8-Flatpak.flatpak"
     LinuxAppimageInstaller ->
       "https://github.com/Lunarienya/ElysiumLauncher/releases/download/"
       <> version
