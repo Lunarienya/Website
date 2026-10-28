@@ -3,7 +3,7 @@ pub fn logo() -> String {
 }
 
 pub fn modpack_link() -> String {
-  "https://assets.astrality.party/lunarie/instances/Lunarie%20Arcane.zip"
+  "https://assets.astrality.party/lunarie/instances/Lunarie%20Mono.zip"
 }
 
 pub fn launcher_link() -> String {
