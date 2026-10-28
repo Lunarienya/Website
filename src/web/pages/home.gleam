@@ -36,13 +36,13 @@ fn guide() {
       ]),
       tutorial_video("https://assets.astrality.party/lunarie/website/videos/video-2-launcher.mp4"),
     ]),
-    step("4", "Add Arcane and play", [
+    step("4", "Add Mono and play", [
       html.p([attribute.class("max-w-3xl leading-7 text-zinc-300")], [
-        element.text("Drag and drop the Arcane ZIP onto the launcher and double-click it to launch."),
+        element.text("Drag and drop the Mono ZIP onto the launcher and double-click it to launch."),
         html.br([]),
         html.b([], [element.text("Do not extract the ZIP.")]),
       ]),
-      plain_link(config.modpack_link(), "Download Arcane", False),
+      plain_link(config.modpack_link(), "Download Mono", False),
       tutorial_video("https://assets.astrality.party/lunarie/website/videos/video-3-instance.mp4"),
     ]),
   ])
@@ -60,7 +60,7 @@ fn intro() {
           html.h1([attribute.class("text-6xl font-bold leading-[0.88] tracking-[-0.06em] sm:text-8xl")], [
             element.text("Lunarie"),
             html.br([]),
-            html.span([attribute.class("text-violet-300")], [element.text("Arcane")]),
+            html.span([attribute.class("text-violet-300")], [element.text("Mono")]),
           ]),
         ]),
         html.div([attribute.class("flex justify-center lg:row-span-2 lg:justify-end")], [
