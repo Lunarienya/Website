@@ -2,7 +2,7 @@ import lustre/attribute
 import lustre/element
 import lustre/element/html
 
-const version = "v1.1"
+const version = "v1.2"
 
 type InstallType {
   WindowsInstaller
